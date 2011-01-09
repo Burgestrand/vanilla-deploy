@@ -3,3 +3,5 @@ public/javascripts/compiled
 public/stylesheets/compiled
 
 .sass-cache
+
+Gemfile.lock
