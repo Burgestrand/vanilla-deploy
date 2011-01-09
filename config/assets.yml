@@ -1,9 +1,0 @@
-embed_assets: on
-
-javascripts:
-  common:
-    - public/javascripts/compiled/**/*.js
-
-stylesheets:
-  common:
-    - public/stylesheets/compiled/**/*.css
