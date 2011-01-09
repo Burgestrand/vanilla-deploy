@@ -1,7 +1,9 @@
 source :rubygems
 
-gem 'vlad', '~> 2.1'
-gem 'vlad-git', '~> 2.2'
+group :development do
+  gem 'vlad', '~> 2.1'
+  gem 'vlad-git', '~> 2.2'
+end
 
 group :assets do
   gem 'jammit'  # JavaScript / CSS bundler
