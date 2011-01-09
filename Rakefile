@@ -28,7 +28,7 @@ begin
   require 'vlad'
   require 'vlad/core'
   require 'vlad/git'
-  require './config/deploy.rb'
+  require './config/deploy'
   
   namespace :vlad do
     desc "Updates the production server under a maintenance mode"

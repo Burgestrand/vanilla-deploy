@@ -15,3 +15,6 @@ set :shared_paths, shared_paths.merge({
   'tmp'    => 'tmp',
   'log'    => 'log'
 })
+
+# Vlad assumes we use :type => rails, try to remedy that
+set :mkdirs, ['.']
