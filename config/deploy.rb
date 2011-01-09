@@ -9,7 +9,7 @@ set :deploy_to, '/tmp/vanilla-deploy'
 set :domain, 'Kim@localhost'
 
 # Shared paths to be symlinked on deploy
-set :shared_paths, shared_paths.merge({})
+set :shared_paths, shared_paths.merge({'log' => 'log'})
 
 # Vlad assumes we use :type => rails, try to remedy that
 set :mkdirs, ['.']
