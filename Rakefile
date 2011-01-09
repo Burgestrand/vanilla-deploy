@@ -34,6 +34,11 @@ begin
     desc "Updates the production server under a maintenance mode"
     task :deploy => ['maintenance:on', 'update', 'maintenance:off']
     
+    # Bundles assets on the remote server
+    remote_task :assets do
+      run "cd #{current_release} && #{rake_cmd} assets"
+    end
+    
     # Put the server in maintenance mode
     # 
     # This assumes that you have a file named config/maintenance.html in your
