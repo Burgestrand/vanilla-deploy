@@ -32,11 +32,16 @@ begin
   
   namespace :vlad do
     desc "Updates the production server under a maintenance mode"
-    task :deploy => ['maintenance:on', 'update', 'maintenance:off']
+    task :deploy => ['maintenance:on', 'bundler', 'update', 'assets', 'maintenance:off']
     
     # Bundles assets on the remote server
     remote_task :assets do
       run "cd #{current_release} && #{rake_cmd} assets"
+    end
+    
+    # Makes sure all dependencies are installed using bundler
+    remote_task :bundler do
+      run "cd #{current_release} && bundle install --deployment --without=development"
     end
     
     # Put the server in maintenance mode
