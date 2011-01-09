@@ -44,11 +44,14 @@ begin
     # @see http://blog.nodeta.fi/2009/03/11/stopping-your-rails-application-with-phusion-passenger/
     namespace :maintenance do
       remote_task :on do
-        run "cp -f #{current_release}/config/maintenance.html #{shared_path}/tmp/"
+        run [
+          "touch #{current_release}/public/maintenance.html",
+          "cp -f #{current_release}/public/maintenance.html #{shared_path}/"
+        ].join(' && ')
       end
       
       remote_task :off do
-        run "rm -f #{shared_path}/tmp/maintenance.html"
+        run "rm -f #{shared_path}/maintenance.html"
       end
     end
   end

@@ -10,7 +10,6 @@ set :domain, 'Kim@localhost'
 
 # Shared paths to be symlinked on deploy
 set :shared_paths, shared_paths.merge({
-  'config' => 'config',
   'assets' => 'public/assets',
   'tmp'    => 'tmp',
   'log'    => 'log'
